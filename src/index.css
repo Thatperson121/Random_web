@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-900 dark:text-white bg-white dark:bg-gray-950 transition-colors duration-200;
+  }
+
+  ::selection {
+    @apply bg-blue-500/30 dark:bg-blue-500/50;
+  }
+}
+
+/* Custom cursor effects */
+.cursor-custom {
+  @apply fixed w-6 h-6 rounded-full bg-blue-500/50 pointer-events-none transform -translate-x-1/2 -translate-y-1/2 z-50 mix-blend-difference transition-all duration-150 ease-out;
+}
+
+/* Background grid pattern */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Markdown preview styling */
+.markdown-preview h1 {
+  @apply text-2xl font-bold mb-4 mt-6;
+}
+
+.markdown-preview h2 {
+  @apply text-xl font-bold mb-3 mt-5;
+}
+
+.markdown-preview h3 {
+  @apply text-lg font-bold mb-2 mt-4;
+}
+
+.markdown-preview p {
+  @apply mb-4;
+}
+
+.markdown-preview ul, .markdown-preview ol {
+  @apply pl-5 mb-4;
+}
+
+.markdown-preview code {
+  @apply bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono;
+}
+
+.markdown-preview pre {
+  @apply bg-gray-100 dark:bg-gray-800 p-4 rounded mb-4 overflow-x-auto;
+}
+
+.markdown-preview pre code {
+  @apply bg-transparent p-0;
+}
+
+.markdown-preview blockquote {
+  @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic my-4;
+}
+
+.markdown-preview a {
+  @apply text-blue-600 dark:text-blue-400 hover:underline;
+}
+
+.markdown-preview table {
+  @apply w-full mb-4 border-collapse;
+}
+
+.markdown-preview table td,
+.markdown-preview table th {
+  @apply border border-gray-300 dark:border-gray-700 px-4 py-2;
+}
+
+.markdown-preview table th {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
